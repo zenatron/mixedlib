@@ -1,0 +1,22 @@
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "mixedlib"
+version = "0.1.0"
+description = "A mixed Python and Rust library for basic arithmetic operations"
+requires-python = ">=3.8"
+
+[tool.pytest.ini_options]
+testpaths = ["python/tests"]
+
+[tool.maturin]
+# Python package source lives under python/
+python-source = "python"
+# The Rust extension compiles to mixedlib._rust (i.e. python/mixedlib/_rust.so)
+module-name = "mixedlib._rust"
+# Enable the PyO3 extension-module feature during maturin builds
+features = ["extension-module"]
+# Rust crate is in the rust/ subdirectory
+manifest-path = "rust/Cargo.toml"

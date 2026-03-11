@@ -1,0 +1,19 @@
+[package]
+name = "mixedlib-rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# Must match the module-name leaf: mixedlib._rust → lib name "_rust"
+name = "_rust"
+crate-type = ["cdylib"]
+
+[features]
+# When this feature is active (maturin always enables it) the pyo3 crate is
+# compiled in and the Python extension module is built.
+# Without this feature (plain `cargo test`) pyo3 is not a dependency at all,
+# so no Python runtime or headers are required to run the Rust unit tests.
+extension-module = ["dep:pyo3"]
+
+[dependencies]
+pyo3 = { version = "0.28", optional = true, features = ["extension-module"] }

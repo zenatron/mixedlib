@@ -1,0 +1,24 @@
+.maturing
+.venv/
+.vscode
+vscode-extension/node_modules
+vscode-extension/out
+vscode-extension/*.vsix
+target
+
+# Python bytecode
+*.pyc
+*.pyo
+__pycache__/
+
+# Pytest
+.pytest_cache/
+
+# Maturin / pip packaging
+*.egg-info/
+dist/
+wheels/
+
+# Compiled Python extension modules (maturin develop output)
+*.so
+*.pyd

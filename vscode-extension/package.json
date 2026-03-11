@@ -1,0 +1,22 @@
+{
+  "name": "maturing",
+  "displayName": "Maturing",
+  "description": "Right-click any PyO3 function imported from Rust source and Go To Definition jumps directly to the pub fn line in the Rust source.",
+  "version": "0.1.0",
+  "publisher": "richard-k-schultz",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {},
+  "scripts": {
+    "compile": "tsc -p tsconfig.json",
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.15.0"
+  }
+}

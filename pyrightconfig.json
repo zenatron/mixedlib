@@ -1,0 +1,12 @@
+{
+    "pythonVersion": "3.8",
+    // Package source is under python/ (mirrors pyproject.toml python-source)
+    "include": ["python"],
+    "exclude": ["**/__pycache__", "**/*.egg-info"],
+    // Stub files for the compiled Rust extension live in python/
+    "stubPath": "python",
+    "reportMissingImports": "none",
+    // Suppress the "source not available" warning for mixedlib._rust until
+    // the Rust extension has been compiled with `maturin develop`.
+    "reportMissingModuleSource": "none"
+}
